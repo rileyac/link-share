@@ -48,8 +48,10 @@
       <div class="url-display">
         <p><strong>Resource Type:</strong> {{ submittedValues()?.type }}</p>
         <p><strong>Content:</strong> {{ submittedValues()?.content }}</p>
-        <p class="todo-message">
-          TODO: Connect to API to generate shareable URL
+        <p *ngIf="generatedUrl">
+          <strong>Shareable Link: </strong>
+          <a [href]="generatedUrl" target="_blank">{{ generatedUrl }}</a>
+          <!-- handle edge case? -->
         </p>
       </div>
     </div>

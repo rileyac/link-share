@@ -1,0 +1,39 @@
+<div class="resource-list-container">
+  <h2>View Resources</h2>
+
+  <button (click)="loadTextSnippets()">View Text Snippets</button>
+  <button (click)="loadLinks()">View Links</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Generated URL</th>
+        <th>Content</th>
+        <th>Views</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (resource of resources(); track resource.path) {
+      <tr>
+        <td>{{ resource.resource_type }}</td>
+        <td>
+          <a [href]="getFullUrl(resource.path)" target="_blank">
+            {{ getFullUrl(resource.path) }}
+          </a>
+        </td>
+        <td>
+          @if (resource.resource_type === 'TextSnippet') {
+          {{ resource.text_content }}
+          } @else {
+          <a [href]="resource.original_link" target="_blank">{{
+            resource.original_link
+          }}</a>
+          }
+        </td>
+        <td>{{ resource.view_count }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,41 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #132d70;
+  color: white;
+}
+
+td a {
+  color: #007bff;
+}
+
+button {
+  background-color: #30b059;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+button:first-of-type {
+  margin-right: 20px; /* adds space between buttons */
+}
+
+button:hover {
+  background-color: #45a049;
+}
